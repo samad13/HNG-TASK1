@@ -34,13 +34,13 @@ app.post('/hng2', (req, res) => {
         let result;
         
         switch(operationTypes){
-            case "addition":
+            case "addition" || "add":
                 result = x + y;
                 break;
-            case "subtraction":
+            case "subtraction" || "subtract":
                 result = x - y;
                 break;
-            case "multiplication":
+            case "multiplication" || "multiply":
                 result = x * y;
                 break;
             default:
