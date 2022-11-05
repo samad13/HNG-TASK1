@@ -19,7 +19,7 @@ app.get('/hng2',(req, res)=>{
   res.json("this is for task2");
 });
 
-const myEnum = ['add', 'addition', 'subtract', 'subtraction', 'multiply','multiplication'];
+const arithmetic = ['add', 'addition', 'subtract', 'subtraction', 'multiply','multiplication'];
 
 app.post('/hng2', (req, res) => {
     let x = parseFloat(req.body.x);
@@ -28,7 +28,7 @@ app.post('/hng2', (req, res) => {
     let slackUsername = "S13";
     if(isNaN(x) || isNaN(y)){
         res.status(401).send("input field not a number");
-    } else if(!operation.includes(myEnum)){
+    } else if(!arithmetic.includes(myEnum)){
         res.status(401).send("not valid enum types");
     } else {
         let result;
