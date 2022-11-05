@@ -19,21 +19,21 @@ app.get('/hng2',(req, res)=>{
   res.json("this is for task2");
 });
 
-const operationTypes = ['addition', 'subtraction', 'multiplication'];
+const operation = ['add', 'addition', 'subtract', 'subtraction', 'multiply','multiplication'];
 
 app.post('/hng2', (req, res) => {
     let x = parseFloat(req.body.x);
     let y = parseFloat(req.body.y);
-    let operation = req.body.operation_type.toLowerCase();
+    let myEnum = req.body.operation_type.toLowerCase();
     let slackUsername = "S13";
     if(isNaN(x) || isNaN(y)){
         res.status(400).send("input field not a number");
-    } else if(!operationTypes.includes(operation)){
-        res.status(400).send("not valid operation types");
+    } else if(!operation.includes(myEnum)){
+        res.status(400).send("not valid enum types");
     } else {
         let result;
         
-        switch(operation){
+        switch(myEnum){
             case "addition":
                 result = x + y;
                 break;
