@@ -24,16 +24,16 @@ const arithmetic = ['add', 'addition', 'subtract', 'subtraction', 'multiply','mu
 app.post('/hng2', (req, res) => {
     let x = parseFloat(req.body.x);
     let y = parseFloat(req.body.y);
-    let myEnum = req.body.operation_type.toLowerCase();
+    let operationTypes = req.body.operation_type.toLowerCase();
     let slackUsername = "S13";
     if(isNaN(x) || isNaN(y)){
         res.status(401).send("input field not a number");
-    } else if(!arithmetic.includes(myEnum)){
-        res.status(401).send("not valid enum types");
+    } else if(!arithmetic.includes(operationTypes)){
+        res.status(401).send("not valid operation types");
     } else {
         let result;
         
-        switch(myEnum){
+        switch(operationTypes){
             case "addition":
                 result = x + y;
                 break;
