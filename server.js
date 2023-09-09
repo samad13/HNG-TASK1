@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended:true}));
 
 
-app.get('/',(req, res)=>{
+app.get('/api',(req, res)=>{
   res.json(
     {slackUsername:"S13",backend: true,age: 29, bio:"born in kwara and last born of a family of three"} );
 });
