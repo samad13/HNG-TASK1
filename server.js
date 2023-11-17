@@ -8,11 +8,11 @@ app.use(express.urlencoded({ extended: true }));
 
 
 
-app.get('/split-payments/compute', (req, res) => {
+app.get('/payments/compute', (req, res) => {
     res.json("this is for task2");
 });
 
-app.post('/split-payments/compute', (req, res) => {
+app.post('/payments/compute', (req, res) => {
     try {
 
 
